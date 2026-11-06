@@ -1,0 +1,35 @@
+{
+  "name": "keycraft",
+  "version": "0.2.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite --host localhost",
+    "build": "tsc --noEmit && vite build",
+    "check": "tsc --noEmit",
+    "preview": "vite preview --host localhost"
+  },
+  "dependencies": {
+    "@codemirror/commands": "6.11.1",
+    "@codemirror/lang-javascript": "6.2.5",
+    "@codemirror/language": "6.13.1",
+    "@codemirror/state": "6.7.6",
+    "@codemirror/view": "6.43.15",
+    "@lezer/highlight": "1.2.5",
+    "@replit/codemirror-vim": "6.4.0",
+    "lucide-react": "1.69.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@tailwindcss/vite": "4.3.4",
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.2.1",
+    "tailwindcss": "4.3.4",
+    "typescript": "5.9.3",
+    "vite": "8.3.6"
+  }
+}
