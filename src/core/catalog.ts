@@ -3,6 +3,7 @@ import { interviewChallenges, interviewTopics } from './interview';
 import { getLanguage, repairStarterLanguages, solutionLanguages } from './languages';
 import { repairs } from './repairs';
 import { weekendChallenges, weekendTopics } from './weekend';
+import { notionWeek1Challenges, notionWeek1Topics } from './notion-week1';
 import type { Language, RunRecord, Selection } from '../types';
 
 export interface Drill {
@@ -24,7 +25,7 @@ const languageTopicOrder = new Map(['internals', 'timers', 'async', 'typescript'
 const labelsFor = (ids: Language[]) => ids.map((id) => getLanguage(id).shortName).join(' / ');
 
 export const drillCatalog: Drill[] = [
-  ...[...weekendChallenges, ...challenges, ...interviewChallenges].map((challenge): Drill => {
+  ...[...weekendChallenges, ...notionWeek1Challenges, ...challenges, ...interviewChallenges].map((challenge): Drill => {
     const languageIds = solutionLanguages(challenge.solutions);
     return {
       id: challenge.id,
@@ -58,6 +59,7 @@ export const drillCatalog: Drill[] = [
 
 export const topicCatalog = [
   ...weekendTopics,
+  ...notionWeek1Topics,
   ...topics.filter(({ id }) => !algorithmTopics.has(id)).sort((left, right) =>
     (languageTopicOrder.get(left.id) ?? Infinity) - (languageTopicOrder.get(right.id) ?? Infinity)),
   { id: 'repair', label: 'Repair Lab', description: 'Fix broken code and run its behavior checks.' },
